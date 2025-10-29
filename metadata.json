@@ -1,0 +1,5 @@
+{
+  "name": "Earth Revolution Simulator",
+  "description": "An interactive simulation for elementary students to learn about Earth's revolution, axial tilt, seasons, sun's altitude, and the changing length of day and night.",
+  "requestFramePermissions": []
+}
