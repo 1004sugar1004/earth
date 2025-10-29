@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { getEarthPosition } from '../utils/simulation';
 import { Season } from '../types';
@@ -57,8 +56,8 @@ const RevolutionSim: React.FC<RevolutionSimProps> = ({ dayOfYear, season }) => {
       
       <SeasonLabel position="top" name={Season.Winter} isActive={season === Season.Winter}/>
       <SeasonLabel position="bottom" name={Season.Summer} isActive={season === Season.Summer}/>
-      <SeasonLabel position="left" name={Season.Spring} isActive={season === Season.Spring}/>
-      <SeasonLabel position="right" name={Season.Autumn} isActive={season === Season.Autumn}/>
+      <SeasonLabel position="left" name={Season.Autumn} isActive={season === Season.Autumn}/>
+      <SeasonLabel position="right" name={Season.Spring} isActive={season === Season.Spring}/>
 
       <Sun />
       <Earth x={x} y={y} />
