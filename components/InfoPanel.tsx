@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Season } from '../types';
-import { formatDate, formatHours } from '../utils/simulation';
+import { formatHours } from '../utils/simulation';
 
 interface InfoPanelProps {
   dayOfYear: number;
@@ -9,10 +8,10 @@ interface InfoPanelProps {
   daylightHours: number;
 }
 
-const InfoItem: React.FC<{ label: string; value: string; colorClass: string }> = ({ label, value, colorClass }) => (
-  <div className="bg-gray-800/50 p-3 rounded-lg flex justify-between items-baseline border-l-4" style={{ borderColor: colorClass }}>
+const InfoItem: React.FC<{ label: string; value: string; color: string }> = ({ label, value, color }) => (
+  <div className="bg-gray-800/50 p-3 rounded-lg flex justify-between items-baseline border-l-4" style={{ borderColor: color }}>
     <span className="text-gray-300 text-sm">{label}</span>
-    <span className={`font-bold text-lg ${colorClass}`}>{value}</span>
+    <span className="font-bold text-lg" style={{ color: color }}>{value}</span>
   </div>
 );
 
@@ -31,17 +30,17 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ dayOfYear, season, daylightHours 
       <InfoItem 
         label="현재 계절" 
         value={`${seasonInfo[season].emoji} ${season}`}
-        colorClass={seasonInfo[season].color}
+        color={seasonInfo[season].color}
       />
       <InfoItem 
         label="☀️ 낮의 길이" 
         value={formatHours(daylightHours)}
-        colorClass="#F6E05E"
+        color="#F6E05E"
       />
       <InfoItem 
         label="🌙 밤의 길이" 
         value={formatHours(nightHours)}
-        colorClass="#63B3ED"
+        color="#63B3ED"
       />
     </div>
   );
