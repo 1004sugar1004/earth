@@ -34,13 +34,13 @@ const Earth: React.FC<{ x: number; y: number; }> = ({ x, y }) => (
 
 const SeasonLabel: React.FC<{ position: 'top' | 'bottom' | 'left' | 'right'; name: Season; isActive: boolean }> = ({ position, name, isActive }) => {
   const positions = {
-    top: 'top-0 -translate-y-full',
-    bottom: 'bottom-0 translate-y-full',
-    left: 'left-0 -translate-x-full',
-    right: 'right-0 translate-x-full'
+    top: 'top-0 left-1/2 -translate-x-1/2 -translate-y-full',
+    bottom: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-full',
+    left: 'left-0 top-1/2 -translate-y-1/2 -translate-x-full',
+    right: 'right-0 top-1/2 -translate-y-1/2 translate-x-full'
   };
   return (
-    <div className={`absolute ${positions[position]} m-auto p-2 text-sm sm:text-base font-bold transition-all duration-300 ${isActive ? 'text-yellow-300 scale-110' : 'text-gray-400'}`}>
+    <div className={`absolute ${positions[position]} p-2 text-sm sm:text-base font-bold transition-all duration-300 ${isActive ? 'text-yellow-300 scale-110' : 'text-gray-400'}`}>
       {name}
     </div>
   );
